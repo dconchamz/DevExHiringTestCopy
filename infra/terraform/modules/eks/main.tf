@@ -31,7 +31,7 @@ resource "aws_eks_cluster" "eks_cluster" {
 
 # Rol para nodos
 resource "aws_iam_role" "eks_node_role" {
-  name = "eks-node-role"
+  name = var.eks_node_role
   assume_role_policy = data.aws_iam_policy_document.eks_node_assume_role_policy.json
 }
 
