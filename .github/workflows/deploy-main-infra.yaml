@@ -65,7 +65,8 @@ jobs:
 
     - name: Terraform Init
       run: terraform init
-
+      working-directory: infra/terraform
+      
     - name: Terraform Apply
       run: terraform apply -auto-approve -var-file="${{ github.event.inputs.environment }}.tfvars" -target=module.vpc -target=module.eks -target=module.node_group -target=module.ecr
       working-directory: infra/terraform
