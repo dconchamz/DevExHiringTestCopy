@@ -32,14 +32,11 @@ jobs:
 
       - name: Update Helm values with new IMAGE_TAG
         run: |
-          IMAGE_TAG=${{ github.sha }}
-          echo "Updating Helm values with IMAGE_TAG: $IMAGE_TAG"
-          sed -i "s|tag:.*|tag: \"$IMAGE_TAG\"|" helm/values.yaml
+            IMAGE_TAG=${{ github.sha }}
+            echo "Updating Helm values with IMAGE_TAG: $IMAGE_TAG"
+            sed -i "s|tag:.*|tag: \"$IMAGE_TAG\"|" app-helm/values.yaml
 
       - name: Deploy with Helm
         run: |
-          helm upgrade app-node-backend ./helm \
-            --namespace backend \
-            --values helm/values.yaml \
-            --install \
-            --atomic
+            helm upgrade my-release ./app-helm --namespace backend --values app-helm/values.yaml --install --atomic    
+      
