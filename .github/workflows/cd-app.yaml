@@ -2,10 +2,11 @@
 name: CD Pipeline
 
 on:
-  workflow_run:
-    workflows: ["CI Pipeline"]
-    types:
-      - completed
+    workflow_dispatch:
+#   workflow_run:
+#     workflows: ["CI Pipeline"]
+#     types:
+#       - completed
 permissions:
   id-token: write
   contents: read   # This is required for actions/checkout@v2
