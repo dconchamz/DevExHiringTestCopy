@@ -31,6 +31,10 @@ jobs:
           role-session-name: samplerolesession
           aws-region: us-east-1
 
+      - name: Configure kubectl for EKS
+        run: |
+            aws eks --region us-east-1 update-kubeconfig --name app-blue-eks
+            
       - name: Install Helm
         run: |
           curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
