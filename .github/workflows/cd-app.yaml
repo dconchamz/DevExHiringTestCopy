@@ -47,5 +47,5 @@ jobs:
 
       - name: Deploy with Helm
         run: |
-            helm upgrade my-release ./app-helm --namespace backend --values app-helm/values.yaml --install --atomic    
+            helm upgrade my-release . --namespace backend --values app-helm/values.yaml --install --atomic    
       
