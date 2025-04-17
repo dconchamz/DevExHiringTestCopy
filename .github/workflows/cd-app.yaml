@@ -22,7 +22,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::269633716143:role/githubChallengeRole
           role-session-name: samplerolesession
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: us-east-1
 
       - name: Install Helm
         run: |
