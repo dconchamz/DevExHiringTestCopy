@@ -3,7 +3,7 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - main
+      - master
 permissions:
   id-token: write
   contents: read   # This is required for actions/checkout@v2
